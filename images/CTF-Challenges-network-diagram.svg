@@ -1,0 +1,67 @@
+<svg viewBox="0 0 1000 700" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="1000" height="700" fill="#0d1117"/>
+  <text x="500" y="40" text-anchor="middle" fill="#ffffff" font-size="24" font-weight="bold">CTF-Challenges — Networked Challenge Tied Into Existing Lab</text>
+  <text x="500" y="63" text-anchor="middle" fill="#8b949e" font-size="13">Offense (exploitation) + Defense (detection), same event</text>
+
+  <rect x="410" y="90" width="180" height="55" rx="8" fill="#1f6feb" stroke="#58a6ff" stroke-width="2"/>
+  <text x="500" y="115" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="bold">pfSense CE</text>
+  <text x="500" y="132" text-anchor="middle" fill="#dbe4f0" font-size="10">Router / Firewall</text>
+
+  <line x1="500" y1="145" x2="500" y2="200" stroke="#8b949e" stroke-width="2"/>
+  <line x1="500" y1="145" x2="200" y2="200" stroke="#8b949e" stroke-width="2"/>
+  <text x="290" y="175" fill="#f0883e" font-size="11" font-weight="bold">LAN</text>
+  <text x="510" y="175" fill="#f0883e" font-size="11" font-weight="bold">OPT1</text>
+
+  <!-- VLAN20 USERS -->
+  <rect x="70" y="200" width="260" height="110" rx="10" fill="#161b22" stroke="#d29922" stroke-width="2"/>
+  <text x="200" y="225" text-anchor="middle" fill="#d29922" font-size="14" font-weight="bold">VLAN 20 — USERS</text>
+  <rect x="100" y="245" width="200" height="50" rx="6" fill="#21262d" stroke="#d29922" stroke-width="1.5"/>
+  <text x="200" y="265" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">Client01-Win10</text>
+  <text x="200" y="282" text-anchor="middle" fill="#c9d1d9" font-size="10">Attacker role: Nmap, Burp Suite</text>
+
+  <!-- VLAN30 SERVERS -->
+  <rect x="670" y="200" width="260" height="290" rx="10" fill="#161b22" stroke="#f85149" stroke-width="2"/>
+  <text x="800" y="225" text-anchor="middle" fill="#f85149" font-size="14" font-weight="bold">VLAN 30 — SERVERS/DMZ</text>
+
+  <rect x="700" y="245" width="200" height="50" rx="6" fill="#21262d" stroke="#f85149" stroke-width="1.5"/>
+  <text x="800" y="264" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">Ubuntu-DMZ</text>
+  <text x="800" y="280" text-anchor="middle" fill="#79c0ff" font-size="9">192.168.30.10</text>
+
+  <rect x="700" y="300" width="200" height="60" rx="6" fill="#21262d" stroke="#a5d6ff" stroke-width="1.5"/>
+  <text x="800" y="318" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">CTF Web Challenge</text>
+  <text x="800" y="333" text-anchor="middle" fill="#c9d1d9" font-size="10">Docker container on Cowrie-Honeypot</text>
+  <text x="800" y="348" text-anchor="middle" fill="#79c0ff" font-size="9">192.168.30.30 : 8080</text>
+
+  <rect x="700" y="365" width="200" height="45" rx="6" fill="#21262d" stroke="#e3b341" stroke-width="1.5"/>
+  <text x="800" y="384" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">Cowrie-Honeypot</text>
+  <text x="800" y="399" text-anchor="middle" fill="#79c0ff" font-size="9">192.168.30.30</text>
+
+  <rect x="700" y="415" width="200" height="55" rx="6" fill="#21262d" stroke="#a371f7" stroke-width="1.5"/>
+  <text x="800" y="435" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">Wazuh-Manager</text>
+  <text x="800" y="450" text-anchor="middle" fill="#79c0ff" font-size="9">192.168.30.20</text>
+  <text x="800" y="463" text-anchor="middle" fill="#c9d1d9" font-size="9">Custom rule detects exploitation</text>
+
+  <!-- Arrows -->
+  <defs>
+    <marker id="atk" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#f85149"/>
+    </marker>
+    <marker id="det" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#a371f7"/>
+    </marker>
+  </defs>
+  <path d="M300,270 C450,270 600,330 700,330" fill="none" stroke="#f85149" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#atk)"/>
+  <text x="500" y="255" text-anchor="middle" fill="#f85149" font-size="11">① Exploit attempt (Nmap / Burp / HTTP requests)</text>
+
+  <path d="M800,360 L800,365" fill="none" stroke="#a371f7" stroke-width="2" marker-end="url(#det)"/>
+  <path d="M800,410 L800,415" fill="none" stroke="#a371f7" stroke-width="2" marker-end="url(#det)"/>
+  <text x="800" y="500" text-anchor="middle" fill="#a371f7" font-size="11">② Logs forwarded to Wazuh-Manager</text>
+  <text x="800" y="516" text-anchor="middle" fill="#a371f7" font-size="11">③ Custom rule fires → alert visible in Dashboard</text>
+
+  <!-- Legend -->
+  <rect x="70" y="550" width="860" height="120" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+  <text x="500" y="575" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="bold">Attack Chain — Offense and Defense, Same Event</text>
+  <text x="100" y="600" fill="#c9d1d9" font-size="11">① Windows 10 client (Users, VLAN20) probes and exploits the CTF web challenge container on VLAN30</text>
+  <text x="100" y="620" fill="#c9d1d9" font-size="11">② The container's activity is picked up by the existing Wazuh agent/logging already covering VLAN30</text>
+  <text x="100" y="640" fill="#c9d1d9" font-size="11">③ A purpose-written local rule (same technique as Honeypot-Lab) turns that raw activity into a real, visible alert</text>
+</svg>
