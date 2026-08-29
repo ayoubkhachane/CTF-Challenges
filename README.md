@@ -27,7 +27,7 @@ An unplanned bonus reinforced this further: while transferring evidence between 
 | Attacker | Windows 10 client (192.168.20.10), VLAN20 |
 | Detection | Existing Wazuh-Manager (192.168.30.20) — a custom rule was written specifically for this challenge's log output |
 
-![Network Diagram](images/network-diagram.svg)
+![Network Diagram](images/CTF-Challenges-network-diagram.svg)
 
 ---
 
@@ -118,4 +118,5 @@ An unplanned bonus reinforced this further: while transferring evidence between 
 ---
 
 **Author:** Ayoub Khachane
+
 **Previous Projects:** [Network-Lab](https://github.com/ayoubkhachane/Network-Lab) · [SIEM-Lab](https://github.com/ayoubkhachane/SIEM-Lab) · [Honeypot-Lab](https://github.com/ayoubkhachane/Honeypot-Lab) · [Malware-Analysis](https://github.com/ayoubkhachane/Malware-Analysis)
