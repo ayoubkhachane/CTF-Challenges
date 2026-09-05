@@ -111,6 +111,7 @@ An unplanned bonus reinforced this further: while transferring evidence between 
 ---
 
 ## Next Steps
+- The next phase of this portfolio moves from individual offensive/defensive exercises into automation — a [Cyber Tools & Scripts](https://github.com/ayoubkhachane/CyberTools) project that turns manual steps used throughout Network-Lab, SIEM-Lab, Honeypot-Lab, and this project (log digesting, custom rule generation, firewall auditing) into reusable scripts.
 - Add a second networked challenge (e.g. a vulnerable service reachable only after chaining two exploits) for a more advanced attack-chain narrative.
 - Package each local challenge as a portable Docker image others could pull and try themselves.
 - Write a companion "detection engineering" note walking through exactly how the custom Wazuh rule was derived from the observed exploitation traffic, and formally document the bonus exfiltration-detection rule as an intentional part of the SIEM's coverage going forward.
@@ -119,4 +120,4 @@ An unplanned bonus reinforced this further: while transferring evidence between 
 
 **Author:** Ayoub Khachane
 
-**Previous Projects:** [Network-Lab](https://github.com/ayoubkhachane/Network-Lab) · [SIEM-Lab](https://github.com/ayoubkhachane/SIEM-Lab) · [Honeypot-Lab](https://github.com/ayoubkhachane/Honeypot-Lab) · [Malware-Analysis](https://github.com/ayoubkhachane/Malware-Analysis)
+**Related Projects:** [Network-Lab](https://github.com/ayoubkhachane/Network-Lab) · [SIEM-Lab](https://github.com/ayoubkhachane/SIEM-Lab) · [Honeypot-Lab](https://github.com/ayoubkhachane/Honeypot-Lab) · [Malware-Analysis](https://github.com/ayoubkhachane/Malware-Analysis) · [CyberTools](https://github.com/ayoubkhachane/CyberTools)
